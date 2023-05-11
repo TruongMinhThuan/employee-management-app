@@ -1,44 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* For AppBar */
-.draggable {
-  -webkit-user-select: none;
-  -webkit-app-region: drag;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.undraggable {
-  -webkit-app-region: no-drag;
-}
-
-.employee-item {
-  background-color: 'red';
-  width: 200;
-  flex-direction: row;
-}
-
-.management-menu-container{
-  padding: 6px;
-  flex-direction: row;
-  justify-content: end;
-  flex-direction: row;
-  display: flex;
-
-}
-
-
-.table-header{
-  display: flex;
-}
-
-.table-container{
-
-}
-.table-row{
-  display: flex;
-  flex-direction: row;
-  float: 1;
-  
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }

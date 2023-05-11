@@ -1,28 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import CommonTable from './components/tables/CommonTable';
-import { EmployeeTurnScreen } from './screens/EmployeeTurn';
-import { Provider } from 'react-redux';
-import { store } from './store/store';
-import MenuNavigation from './components/navbar/MenuNavigation';
-import { RootRouter } from './routes';
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
-
-  const [isOpen, setOpen] = useState(false);
-  const [isSent, setSent] = useState(false);
-  const [fromMain, setFromMain] = useState<string | null>(null);
-
-
- 
-
   return (
-    <Provider store={store}>
-      <div className="flex flex-col h-screen">
-        {/* <MenuNavigation/>
-        <EmployeeTurnScreen /> */}
-        <RootRouter />
-      </div>
-    </Provider>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.tsx</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
 }
 
