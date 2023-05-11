@@ -9,7 +9,8 @@ import { fetchEmployee } from '../../../store/features/employeeManagement/thunks
 
 type Props = {
     employee: employeeType,
-    onEditClick?: () => void
+    onEditClick?: () => void,
+    number: number
 }
 
 const TableRow = ({ employee, ...props }: Props) => {
@@ -23,37 +24,42 @@ const TableRow = ({ employee, ...props }: Props) => {
     const deleteEmployee = async () => {
         // setIsEditVisible(true)
         await employeeService.deleteEmployee(employee)
-        
-        console.log('eempp:: ',employee);
+
+        console.log('eempp:: ', employee);
         dispatch(fetchEmployee())
     }
 
-
     return (
-        <Row style={containerStyle}>
-            <Col span={6}>
+        <Row style={containerStyle} >
+            <Col span={4}>
                 <div style={style}>
-                    <Avatar size="large" icon={<UserOutlined />}  style={{margin:6}}/>
+                    <span>
+                        {props.number + 1}
+                    </span>
+
+                </div>
+            </Col>
+            <Col span={5}>
+                <div style={style}>
+                    <Avatar size="large" icon={<UserOutlined />} style={{ margin: 6 }} />
                     <span>
                         {employee.name}
                     </span>
 
                 </div>
-
             </Col>
-            <Col span={6}>
+            <Col span={5}>
                 <div style={style}>{employee.phonenumber}</div>
             </Col>
-            <Col span={6}>
+            <Col span={5}>
                 <div style={style}>
-                    {employee.skills?.map((e) => <Tag>{e}</Tag>)}
+                    {employee.skills?.map((e) => <Tag key={e}>{e}</Tag>)}
                 </div>
             </Col>
-            <Col span={6}>
+            <Col span={5}>
                 <Space >
                     <Button onClick={showEmployeeUpdateModal}>Edit</Button>
                     <Button onClick={deleteEmployee}>Delete</Button>
-
                 </Space>
             </Col>
             <EditEmployeeModal
@@ -73,8 +79,8 @@ const containerStyle: React.CSSProperties = {
     borderBottomWidth: 1,
     paddingTop: 6,
     paddingBottom: 6,
-    display:'flex',
-    alignItems:'center'
+    display: 'flex',
+    alignItems: 'center'
 };
 
 

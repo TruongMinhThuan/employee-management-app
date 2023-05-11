@@ -87,12 +87,13 @@ const EditModal = ({ isVisible = false, ...props }: Props) => {
                                 name="username"
                                 noStyle
                                 rules={[{ required: true, message: 'Username is required' }]}
+                                initialValue={employeeInfo.name}
                             >
                                 <Input
                                     placeholder="Please input"
                                     onChange={_onChangeUsername}
-                                    defaultValue={employeeInfo.name}
                                     value={employeeInfo.name}
+                                    
                                 />
                             </Form.Item>
                         </Space>
@@ -102,11 +103,11 @@ const EditModal = ({ isVisible = false, ...props }: Props) => {
                             <Form.Item
                                 name="phonenumber"
                                 noStyle
+                                initialValue={employeeInfo.phonenumber}
                             >
                                 <Input
                                     placeholder="Please input"
                                     onChange={_onChangePhonenumber}
-                                    defaultValue={employeeInfo.phonenumber}
                                 />
                             </Form.Item>
                         </Space>

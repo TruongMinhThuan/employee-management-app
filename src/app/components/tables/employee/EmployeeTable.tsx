@@ -14,22 +14,29 @@ const EmployeeTable = (props: Props) => {
     return (
         <div>
             <Row style={headerContainerStyle} >
-                <Col span={6}>
+                <Col span={4}>
+                    <div style={style}>ID</div>
+                </Col>
+                <Col span={5}>
                     <div style={style}>Name</div>
                 </Col>
-                <Col span={6}>
+                <Col span={5}>
                     <div style={style}>Phone</div>
                 </Col>
-                <Col span={6}>
+                <Col span={5}>
                     <div style={style}>Skills</div>
                 </Col>
-                <Col span={6}>
+                <Col span={5}>
                     <div style={style}>Actions</div>
                 </Col>
             </Row>
             {
-                props.employeeList?.map((e, index) =>
-                    <TableRow employee={e} key={index} />
+                props.employeeList?.map((e: employeeType, index: number) => {
+
+                    return (
+                        <TableRow employee={e} key={e.id} number={index} />
+                    )
+                }
                 )
             }
 
@@ -43,7 +50,7 @@ const headerContainerStyle: React.CSSProperties = {
     // background: '#0092ff',
     // padding: '8px 0',
     borderWidth: 1,
-    textAlign:'center'
+    textAlign: 'center'
 
 };
 

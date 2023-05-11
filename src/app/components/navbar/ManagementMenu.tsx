@@ -8,7 +8,7 @@ type Props = {
 const ManagementMenu = (props: Props) => {
 
     return (
-        <div className='management-menu-container'>
+        <div className='management-menu-container' >
             <Space >
                 {/* <Button type="primary" danger>
                     Primary
